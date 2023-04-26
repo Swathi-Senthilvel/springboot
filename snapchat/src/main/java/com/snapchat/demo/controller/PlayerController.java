@@ -41,4 +41,10 @@ public void deletePlayer(@PathVariable("jno") int jerseyno)
 {
      playService.deletePlayer(jerseyno);
 }
+
+@GetMapping("/sortPlayer/{name}")
+public List<Player> sortPlayers(@PathVariable String name)
+{
+	return playService.sortPlayers(name);
+}
 }

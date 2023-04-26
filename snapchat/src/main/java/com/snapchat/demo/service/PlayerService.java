@@ -3,6 +3,7 @@ package com.snapchat.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.snapchat.demo.model.Player;
@@ -31,5 +32,10 @@ public class PlayerService {
 	public void deletePlayer(int jerseyno)
 	{
 		playRepository.deleteById(jerseyno);
+	}
+	public List<Player> sortPlayers(String name) 
+	{
+	    return playRepository.findAll(Sort.by(name));
+		
 	}
 }
