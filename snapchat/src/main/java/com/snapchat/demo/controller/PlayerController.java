@@ -88,8 +88,32 @@ public List<Player> pagingAndSorting(@PathVariable int offset,@PathVariable int 
 //	return playService.getPlayersByTeam(team,name);
 //
 
+//@DeleteMapping("/deletePlayerByName/{name}")
+//public String deletePlayerByName(@PathVariable String name)
+//{
+//	int result=playService.deletePlayerByName(name);
+//	if(result>0)
+//		return "Player record deleted";
+//	else
+//		return "Problem occured while deleting";
+//}
+
+//@PutMapping("/updatePlayerByName/{team}/{name}")
+//public String updatePlayerByName(@PathVariable String team,@PathVariable String name)
+//{
+//	int result=playService.updatePlayerByName(team,name);
+//	if(result>0)
+//		return "Player record updated";
+//	else
+//		return "Problem occured while updating";
+//}
 
 
+@GetMapping("/native/{team}")
+public List<Player> fetchPlayerByTeam(@PathVariable String team )
+{
+	return playService.fetchPlayerByTeam(team);
+}
 }
 
 

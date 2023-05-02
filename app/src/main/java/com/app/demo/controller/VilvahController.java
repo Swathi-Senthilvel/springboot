@@ -28,7 +28,7 @@ public  class VilvahController {
 	}
 
 //http://localhost:8080/saveVilvah
-@PostMapping(value="/savevil")
+@PostMapping("/savevil")
 public Vilvah saveVilvah(@RequestBody Vilvah s)
 {
 	return vilService.saveVilvah(s);

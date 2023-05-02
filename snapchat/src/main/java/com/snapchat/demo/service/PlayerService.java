@@ -10,8 +10,11 @@ import org.springframework.data.domain.Sort;
 //import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
+
 import com.snapchat.demo.model.Player;
 import com.snapchat.demo.repository.PlayerRepository;
+
+//import jakarta.transaction.Transactional;
 
 @Service
 public class PlayerService {
@@ -87,6 +90,20 @@ public class PlayerService {
 //		return playRepository.getPlayersByTeam(team,name);
 //	}
 	
+//@Transactional
+//public int deletePlayerByName(String name)
+//{
+//	return playRepository.deletePlayerByName(name);
+//}
+
+//@Transactional
+//public int updatePlayerByName(String team,String name)
+//{
+//	return playRepository.updatePlayerByName(team,name);
+//}
 	
-	
+public List<Player> fetchPlayerByTeam(String team)
+{
+	return playRepository.fetchPlayerByTeam(team);
+}
 }
