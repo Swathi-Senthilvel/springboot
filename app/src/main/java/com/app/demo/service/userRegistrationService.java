@@ -1,12 +1,12 @@
-package com.snapchat.demo.service;
+package com.app.demo.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.snapchat.demo.model.Registration;
-import com.snapchat.demo.repository.userRegistrationRepository;
+import com.app.demo.model.Registration;
+import com.app.demo.repository.userRegistrationRepository;
 
 
 

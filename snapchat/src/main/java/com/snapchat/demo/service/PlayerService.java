@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
 import com.snapchat.demo.model.Player;
 import com.snapchat.demo.repository.PlayerRepository;
 
-//import jakarta.transaction.Transactional;
+import jakarta.transaction.Transactional;
+
 
 @Service
 public class PlayerService {
@@ -85,10 +86,10 @@ public class PlayerService {
 //		return playRepository.findByNameEndingWith(suffix);
 //	}
 //	
-//	public List<Player> getPlayersByTeam(String team,String name)
-//	{
-//		return playRepository.getPlayersByTeam(team,name);
-//	}
+	public List<Player> getPlayersByTeam(String team,String name)
+	{
+		return playRepository.getPlayersByTeam(team,name);
+	}
 	
 //@Transactional
 //public int deletePlayerByName(String name)

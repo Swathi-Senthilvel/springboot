@@ -2,28 +2,30 @@ package com.snapchat.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="players")
 public class Player
 {
    @Id
-   private int jerseyno;
+   private int sno;
    private String name;
    private String lastname;
    private String age;
-   private String birthplace;
+   private String stadium;
    private String team;
-   private String nationalteam;
-   private String rollplay;
-   private String ranking;
-   private String debutagainst;
-   private String playertype;
-   private String highestscore;
-public int getJerseyno() {
-	return jerseyno;
+   private String opponentteam;
+   private String matchno;
+   private String hometeam;
+   private String teamcaptain;
+   private String opponentcaptain;
+   private String place;
+public int getSno() {
+	return sno;
 }
-public void setJerseyno(int jerseyno) {
-	this.jerseyno = jerseyno;
+public void setSno(int sno) {
+	this.sno = sno;
 }
 public String getName() {
 	return name;
@@ -43,11 +45,11 @@ public String getAge() {
 public void setAge(String age) {
 	this.age = age;
 }
-public String getBirthplace() {
-	return birthplace;
+public String getStadium() {
+	return stadium;
 }
-public void setBirthplace(String birthplace) {
-	this.birthplace = birthplace;
+public void setStadium(String stadium) {
+	this.stadium = stadium;
 }
 public String getTeam() {
 	return team;
@@ -55,41 +57,41 @@ public String getTeam() {
 public void setTeam(String team) {
 	this.team = team;
 }
-public String getNationalteam() {
-	return nationalteam;
+public String getOpponentteam() {
+	return opponentteam;
 }
-public void setNationalteam(String nationalteam) {
-	this.nationalteam = nationalteam;
+public void setOpponentteam(String opponentteam) {
+	this.opponentteam = opponentteam;
 }
-public String getRollplay() {
-	return rollplay;
+public String getMatchno() {
+	return matchno;
 }
-public void setRollplay(String rollplay) {
-	this.rollplay = rollplay;
+public void setMatchno(String matchno) {
+	this.matchno = matchno;
 }
-public String getRanking() {
-	return ranking;
+public String getHometeam() {
+	return hometeam;
 }
-public void setRanking(String ranking) {
-	this.ranking = ranking;
+public void setHometeam(String hometeam) {
+	this.hometeam = hometeam;
 }
-public String getDebutagainst() {
-	return debutagainst;
+public String getTeamcaptain() {
+	return teamcaptain;
 }
-public void setDebutagainst(String debutagainst) {
-	this.debutagainst = debutagainst;
+public void setTeamcaptain(String teamcaptain) {
+	this.teamcaptain = teamcaptain;
 }
-public String getPlayertype() {
-	return playertype;
+public String getOpponentcaptain() {
+	return opponentcaptain;
 }
-public void setPlayertype(String playertype) {
-	this.playertype = playertype;
+public void setOpponentcaptain(String opponentcaptain) {
+	this.opponentcaptain = opponentcaptain;
 }
-public String getHighestscore() {
-	return highestscore;
+public String getPlace() {
+	return place;
 }
-public void setHighestscore(String highestscore) {
-	this.highestscore = highestscore;
+public void setPlace(String place) {
+	this.place = place;
 }
 
   

@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.snapchat.demo.model.Registration;
-import com.snapchat.demo.service.userRegistrationService;
+import com.snapchat.demo.model.Registrations;
+import com.snapchat.demo.service.usersRegistrationService;
 
 @RestController
-public class userRegistrationController
+public class usersRegistrationController
 {
 	@Autowired
-    userRegistrationService usrRegsitrationService;
+    usersRegistrationService usrRegsitrationService;
     @PostMapping("/registereduser")
-    public Registration saveRegistration(@RequestBody Registration r)
+    public Registrations saveRegistration(@RequestBody Registrations r)
     {
   	  return usrRegsitrationService.saveRegistration(r);
     }
     @GetMapping("/fetchalldata")
-    public List<Registration> getAllUsers()
+    public List<Registrations> getAllUsers()
     {
-    	List<Registration> regList = usrRegsitrationService.getAllUsers();
+    	List<Registrations> regList = usrRegsitrationService.getAllUsers();
     	return regList;
     }
 }

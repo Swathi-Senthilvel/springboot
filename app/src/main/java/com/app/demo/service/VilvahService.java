@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.app.demo.model.Vilvah;
 import com.app.demo.repository.VilvahRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class VilvahService {
 	@Autowired
@@ -49,31 +51,31 @@ public class VilvahService {
     	 return obj;
      }
 	
-	public void deleteVilvah(int jerseyno)
-	{
-		vilRepository.deleteById(jerseyno);
-	}
-	public List<Vilvah> sortVilvahs(String name) 
-	{
-	    // Ascending Order return playRepository.findAll(Sort.by(name));
-		return vilRepository.findAll(Sort.by(Direction.DESC,name));
-		
-	}
-	public Page<Vilvah> pagingVilvahs(int offset, int pageSize) 
-	{
-		PageRequest paging = PageRequest.of(offset, pageSize);
-		Page<Vilvah> vilData=vilRepository.findAll(paging);
-		//List<Vilvah> vilList=vilData.getContent();
-		return vilData;
-	}
-	
-	public List<Vilvah>pagingAndSorting(int offset,int pageSize,String field)
-	{
-		PageRequest paging = PageRequest.of(offset,pageSize).withSort(Sort.by(field));
-		Page<Vilvah> vil = vilRepository.findAll(paging);
-		return vil.getContent();
-	}
-//	public List<Vilvah> fetchTeamByPrefix(String prefix)
+//	public void deleteVilvah(int jerseyno)
+//	{
+//		vilRepository.deleteById(jerseyno);
+//	}
+//	public List<Vilvah> sortVilvahs(String name) 
+//	{
+//	    // Ascending Order return playRepository.findAll(Sort.by(name));
+//		return vilRepository.findAll(Sort.by(Direction.DESC,name));
+//		
+//	}
+//	public Page<Vilvah> pagingVilvahs(int offset, int pageSize) 
+//	{
+//		PageRequest paging = PageRequest.of(offset, pageSize);
+//		Page<Vilvah> vilData=vilRepository.findAll(paging);
+//		//List<Vilvah> vilList=vilData.getContent();
+//		return vilData;
+//	}
+//	
+//	public List<Vilvah>pagingAndSorting(int offset,int pageSize,String field)
+//	{
+//		PageRequest paging = PageRequest.of(offset,pageSize).withSort(Sort.by(field));
+//		Page<Vilvah> vil = vilRepository.findAll(paging);
+//		return vil.getContent();
+//	}
+//	public List<Vilvah> fetchTypeByPrefix(String prefix)
 //	{
 //		return vilRepository.findByNameStartingWith(prefix);
 //	}
@@ -81,12 +83,28 @@ public class VilvahService {
 //	{
 //		return vilRepository.findByNameEndingWith(suffix);
 //	}
-//	
-//	public List<Vilvah> getVilvahsByTeam(String type,String name)
+	
+//	public List<Vilvah> getVilvahsByType(String type,String name)
 //	{
 //		return vilRepository.getVilvahsByType(type,name);
 //	}
 	
-	
+	@Transactional
+	public int deleteVilvahByName(String name)
+	{
+		return vilRepository.VilvahByName(name);
+	}
+
+//	@Transactional
+//	public int updateVilvahByName(String type,String name)
+//	{
+//		return vilRepository.updateVilvahByName(type,name);
+//	}
+//		
+//	public List<Vilvah> fetchVilvahByType(String type)
+//	{
+//		return vilRepository.fetchVilvahByType(type);
+	//}
+
 	
 }

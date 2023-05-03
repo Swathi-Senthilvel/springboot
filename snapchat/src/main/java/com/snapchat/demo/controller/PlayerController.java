@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.snapchat.demo.model.Player;
@@ -82,11 +82,11 @@ public List<Player> pagingAndSorting(@PathVariable int offset,@PathVariable int 
 //}
 //query
 //http://localhost:8080/fetchStudentsByDepartment/ECE/Minu
-//@GetMapping("/fetchStudentsByPlayer/{team}/{name}")
-//public List<Player> getPlayersByTeam(@PathVariable String team,@PathVariable String name)
-//{
-//	return playService.getPlayersByTeam(team,name);
-//
+@GetMapping("/fetchByPlayer/{team}/{name}")
+public List<Player> getPlayersByTeam(@PathVariable String team,@PathVariable String name)
+{
+	return playService.getPlayersByTeam(team,name);
+
 
 //@DeleteMapping("/deletePlayerByName/{name}")
 //public String deletePlayerByName(@PathVariable String name)
@@ -109,11 +109,13 @@ public List<Player> pagingAndSorting(@PathVariable int offset,@PathVariable int 
 //}
 
 
-@GetMapping("/native/{team}")
-public List<Player> fetchPlayerByTeam(@PathVariable String team )
-{
-	return playService.fetchPlayerByTeam(team);
-}
-}
+//@GetMapping("/native/{team}")
+//public List<Player> fetchPlayerByTeam(@PathVariable String team )
+//{
+//	return playService.fetchPlayerByTeam(team);
+//}
 
+
+}
+}
 
