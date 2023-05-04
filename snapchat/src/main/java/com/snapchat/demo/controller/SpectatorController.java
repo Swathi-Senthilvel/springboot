@@ -14,8 +14,8 @@ public class SpectatorController
 	@Autowired
      SpectatorService personserv;
 	@GetMapping("/getAllpersons")
-		public List<Spectator>fetchAllPersons()
+		public List<Spectator>fetchAllSpectators()
 		{
-			return personserv.fetchAllPersons();
+			return personserv.fetchAllSpectators();
     	}
 }

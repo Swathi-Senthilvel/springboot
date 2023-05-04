@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.snapchat.demo.model.SpectatorAddress;
 @Repository
-public interface SpectatorAddressRepository extends JpaRepository<SpectatorAddress,Long>
+public interface SpectatorAddressRepository extends JpaRepository<SpectatorAddress,Integer>
 {
 
 }

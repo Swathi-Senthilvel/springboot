@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.snapchat.demo.model.Spectator;
 
 @Repository
-public interface SpectatorRepository extends JpaRepository<Spectator,Long> {
+public interface SpectatorRepository extends JpaRepository<Spectator,Integer> {
 
 }

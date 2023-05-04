@@ -13,11 +13,11 @@ public class SpectatorService
 {
 	@Autowired
    SpectatorRepository personRepo;
-		public List<Spectator>fetchAllPersons()
+		public List<Spectator>fetchAllSpectators()
 		{
 			return personRepo.findAll();
 		}
-		public Spectator savePerson(Spectator p)
+		public Spectator saveSpectator(Spectator p)
 		{
 			return personRepo.save(p);
 		}

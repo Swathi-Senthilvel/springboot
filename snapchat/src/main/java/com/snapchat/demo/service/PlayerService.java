@@ -9,12 +9,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 //import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import com.snapchat.demo.model.Player;
 import com.snapchat.demo.repository.PlayerRepository;
 
-import jakarta.transaction.Transactional;
 
 
 @Service
@@ -77,31 +76,31 @@ public class PlayerService {
 		Page<Player> play = playRepository.findAll(paging);
 		return play.getContent();
 	}
-//	public List<Player> fetchTeamByPrefix(String prefix)
-//	{
-//		return playRepository.findByNameStartingWith(prefix);
-//	}
-//	public List<Player> fetchTeamBySuffix(String suffix)
-//	{
-//		return playRepository.findByNameEndingWith(suffix);
-//	}
-//	
+	public List<Player> fetchTeamByPrefix(String prefix)
+	{
+		return playRepository.findByNameStartingWith(prefix);
+	}
+	public List<Player> fetchTeamBySuffix(String suffix)
+	{
+		return playRepository.findByNameEndingWith(suffix);
+	}
+	
 	public List<Player> getPlayersByTeam(String team,String name)
 	{
 		return playRepository.getPlayersByTeam(team,name);
 	}
 	
-//@Transactional
-//public int deletePlayerByName(String name)
-//{
-//	return playRepository.deletePlayerByName(name);
-//}
+@Transactional
+public int deletePlayerByName(String name)
+{
+	return playRepository.deletePlayerByName(name);
+}
 
-//@Transactional
-//public int updatePlayerByName(String team,String name)
-//{
-//	return playRepository.updatePlayerByName(team,name);
-//}
+@Transactional
+public int updatePlayerByName(String team,String name)
+{
+	return playRepository.updatePlayerByName(team,name);
+}
 	
 public List<Player> fetchPlayerByTeam(String team)
 {
