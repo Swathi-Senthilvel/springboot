@@ -1,5 +1,4 @@
 package com.app.demo.controller;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,11 +114,4 @@ public String deleteVilvahByName(@PathVariable String name)
 //{
 //	return vilService.fetchVilvahByType(type);
 //}
-
-
-
-
-
-
-
 }

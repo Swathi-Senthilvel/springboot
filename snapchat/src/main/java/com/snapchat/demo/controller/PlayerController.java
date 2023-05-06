@@ -118,5 +118,3 @@ List<Player>fetchPlayerByTeam(@PathVariable String team)
 	return playService.fetchPlayerByTeam(team);
 }
 }
-
-
