@@ -3,9 +3,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,5 +51,15 @@ public class UserController
 	public UserModel getProfile(@PathVariable int id)
 	{
 		return uSer.getProfile(id);
+	}
+	@PutMapping(value="/updateuser/{id}")
+	public  UserModel updateUserModel(@RequestBody UserModel s,@PathVariable int id)
+	{
+		return uSer.updateUserModel(s,id);
+	}
+	@DeleteMapping(value="/deleteUser/{id}")
+	public void deleteUserModel(@PathVariable("id") int id)
+	{
+	     uSer.deleteUserModel(id);
 	}
 }

@@ -1,8 +1,10 @@
 package com.educationalloanportal.demo.service;
 import java.util.List;
 //import java.util.Optional;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 
 import com.educationalloanportal.demo.model.LoanApplicationModel;
@@ -54,4 +56,21 @@ public class UserService
 		UserModel u = uRep.findById(id).get();
 		return u;
 	}
+	 public  UserModel updateUserModel(UserModel s,int id)
+     {
+    	 Optional <UserModel>optional = uRep.findById(id);
+    	 UserModel obj = null;
+    	 if(optional.isPresent())
+    	 {
+    		 obj=optional.get();
+     	
+    		 uRep.save(s);
+    	 }
+    	 return obj;
+     }
+	 public void deleteUserModel(int id)
+	 {
+		 uRep.deleteById(id);
+	 }
+	
 }
