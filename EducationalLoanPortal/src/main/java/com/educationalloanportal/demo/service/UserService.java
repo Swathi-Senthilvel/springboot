@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 
 import com.educationalloanportal.demo.model.LoanApplicationModel;
+//
+//import com.educationalloanportal.demo.model.LoanApplicationModel;
 import com.educationalloanportal.demo.model.UserModel;
 import com.educationalloanportal.demo.repository.LoanApplicationModelRepository;
 import com.educationalloanportal.demo.repository.UserRepository;
@@ -72,5 +73,8 @@ public class UserService
 	 {
 		 uRep.deleteById(id);
 	 }
-	
+	 public UserModel addUser(UserModel s)
+	 {
+		 return uRep.save(s);
+	 }
 }
